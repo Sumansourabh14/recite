@@ -23,7 +23,22 @@ https://recite.onrender.com
 GET /random/quote
 ```
 
-Returns a single random quote.
+Returns a single random quote. 
+[Try in your browser](https://recite.onrender.com/random/quote)
+
+### Response
+
+```JavaScript
+{
+      // the actual quote from the book
+      quote: string,
+      // name of the book
+      book: string,
+      // name of the author
+      author: string
+}
+```
+
 
 ## Get all quotes
 
@@ -31,4 +46,25 @@ Returns a single random quote.
 GET /quotes
 ```
 
-Returns all the quotes.
+Returns all the quotes. 
+[Try in your browser](https://recite.onrender.com/quotes)
+
+### Response
+
+```JavaScript
+{
+      // total number of quotes
+      total: number,
+      // The array of quotes
+      quotes: [
+          {
+              // the actual quote from the book
+              quote: string,
+              // name of the book
+              book: string,
+              // name of the author
+              author: string
+          }
+      ]  
+}
+```
