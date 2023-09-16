@@ -1,32 +1,68 @@
 [
   {
-    "quote": "You never really understand a person until you consider things from his point of view... Until you climb inside of his skin and walk around in it.",
-    "book": "To Kill a Mockingbird",
-    "author": "Harper Lee"
+    "id": "1694861431729",
+    "data": {
+      "quote": "You never really understand a person until you consider things from his point of view... Until you climb inside of his skin and walk around in it.",
+      "book": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "length": 146,
+      "words": 27,
+      "createdAt": "2023-09-16T10:50:31.729Z"
+    }
   },
   {
-    "quote": "Shoot all the blue jays you want, if you can hit 'em, but remember it's a sin to kill a mockingbird.",
-    "book": "To Kill a Mockingbird",
-    "author": "Harper Lee"
+    "id": "1694861896494",
+    "data": {
+      "quote": "Shoot all the blue jays you want, if you can hit 'em, but remember it's a sin to kill a mockingbird.",
+      "book": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "length": 100,
+      "words": 21,
+      "createdAt": "2023-09-16T10:58:16.494Z"
+    }
   },
   {
-    "quote": "Open your eyes and see what you can with them before they close forever.",
-    "book": "All the Light We Cannot See",
-    "author": "Anthony Doerr"
+    "id": "1694861929933",
+    "data": {
+      "quote": "People in their right minds never take pride in their talents.",
+      "book": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "length": 62,
+      "words": 11,
+      "createdAt": "2023-09-16T10:58:49.933Z"
+    }
   },
   {
-    "quote": "People in their right minds never take pride in their talents.",
-    "book": "To Kill a Mockingbird",
-    "author": "Harper Lee"
+    "id": "1694861963579",
+    "data": {
+      "quote": "Open your eyes and see what you can with them before they close forever.",
+      "book": "All the Light We Cannot See",
+      "author": "Anthony Doerr",
+      "length": 72,
+      "words": 14,
+      "createdAt": "2023-09-16T10:59:23.579Z"
+    }
   },
   {
-    "quote": "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.",
-    "book": "Pride and Prejudice",
-    "author": "Jane Austen"
+    "id": "1694861998794",
+    "data": {
+      "quote": "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.",
+      "book": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "length": 117,
+      "words": 23,
+      "createdAt": "2023-09-16T10:59:58.794Z"
+    }
   },
   {
-    "quote": "No, darling! To die it's easy... But you have to struggle for life!",
-    "book": "Maus I: A Survivor's Tale",
-    "author": "Art Spiegelman"
+    "id": "1694862041375",
+    "data": {
+      "quote": "No, darling! To die it's easy... But you have to struggle for life!",
+      "book": "Maus I: A Survivor's Tale",
+      "author": "Art Spiegelman",
+      "length": 67,
+      "words": 13,
+      "createdAt": "2023-09-16T11:00:41.375Z"
+    }
   }
 ]
