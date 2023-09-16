@@ -9,8 +9,10 @@ const {
 const router = express.Router();
 
 router.get("/", (req, res) => {
-  res.send("Welcome!");
+  res.sendFile("index.html", { root: __dirname });
 });
+
+console.log(__dirname);
 
 router.get("/quotes", getQuotes);
 router.get("/random/quote", getRandomQuote);

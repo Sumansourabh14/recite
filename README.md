@@ -30,12 +30,24 @@ Returns a single random quote.
 
 ```JavaScript
 {
-      // the actual quote from the book
-      quote: string,
-      // name of the book
-      book: string,
-      // name of the author
-      author: string
+    id: string,
+    // data related to the quote
+    data: {
+        // the actual quote from the book
+        quote: string,
+        // name of the book
+        book: string,
+        // name of the author
+        author: string,
+        // length of the quote
+        length: number,
+        // total words in the quote
+        words: number,
+        // date and time of first published
+        createdAt: string,
+        // date and time of update (if any)
+        updatedAt: string
+    }      
 }
 ```
 
@@ -53,18 +65,28 @@ Returns all the quotes.
 
 ```JavaScript
 {
-      // total number of quotes
-      total: number,
-      // The array of quotes
-      quotes: [
-          {
-              // the actual quote from the book
-              quote: string,
-              // name of the book
-              book: string,
-              // name of the author
-              author: string
-          }
-      ]  
+    // total number of quotes
+    total: number,
+    // The array of quotes
+    quotes: [
+        id: string,
+        // data related to the quote
+        data: {
+            // the actual quote from the book
+            quote: string,
+            // name of the book
+            book: string,
+            // name of the author
+            author: string,
+            // length of the quote
+            length: number,
+            // total words in the quote
+            words: number,
+            // date and time of first published
+            createdAt: string,
+            // date and time of update (if any)
+            updatedAt: string
+            }
+        ]  
 }
 ```
