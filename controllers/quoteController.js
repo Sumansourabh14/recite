@@ -2,7 +2,8 @@
 const path = require("path");
 const fs = require("fs");
 
-const quotesFilePath = path.resolve("./") + "\\content\\quotes.json";
+// const quotesFilePath = path.resolve("./") + "\\content\\quotes.json";
+const quotesFilePath = path.resolve("./") + "/content/quotes.json";
 
 const getQuotes = (req, res) => {
   const quotesFileContent = fs.readFileSync(quotesFilePath);
