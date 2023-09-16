@@ -16,6 +16,8 @@ const getQuotes = (req, res) => {
 };
 
 const getRandomQuote = (req, res) => {
+  const quotesFileContent = fs.readFileSync(quotesFilePath);
+  const quotes = JSON.parse(quotesFileContent);
   const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
 
   res.status(200).send(randomQuote);
