@@ -14,8 +14,6 @@ const getQuotes = (req, res) => {
   });
 };
 
-console.log(new Date());
-
 const getRandomQuote = (req, res) => {
   const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
 
@@ -58,6 +56,24 @@ const createQuote = (req, res) => {
   }
 };
 
+const updateQuote = (req, res) => {
+  const { id } = req.params;
+
+  const quotes = JSON.parse(fs.readFileSync(quotesFilePath));
+  quotes.map((quote, index) => {
+    if (quote.id === id) {
+      quote.data = { ...quote.data, ...req.body, updatedAt: new Date() };
+    }
+  });
+
+  fs.writeFileSync(quotesFilePath, JSON.stringify(quotes));
+
+  res.send({
+    status: "success",
+    message: `Quote with ${id} has been successfully updated`,
+  });
+};
+
 const deleteQuote = (req, res) => {
   const { id } = req.params;
   console.log(id);
@@ -74,4 +90,10 @@ const deleteQuote = (req, res) => {
   });
 };
 
-module.exports = { getQuotes, getRandomQuote, createQuote, deleteQuote };
+module.exports = {
+  getQuotes,
+  getRandomQuote,
+  createQuote,
+  updateQuote,
+  deleteQuote,
+};
