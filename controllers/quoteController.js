@@ -16,9 +16,26 @@ const getQuotes = (req, res) => {
   });
 };
 
+const getQuotesFromDb = async (req, res) => {
+  const quotes = await QuoteModel.find();
+
+  res.status(200).send({
+    success: true,
+    total: quotes.length,
+    quotes,
+  });
+};
+
 const getRandomQuote = (req, res) => {
   const quotesFileContent = fs.readFileSync(quotesFilePath);
   const quotes = JSON.parse(quotesFileContent);
+  const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+
+  res.status(200).send(randomQuote);
+};
+
+const getRandomQuoteFromDb = async (req, res) => {
+  const quotes = await QuoteModel.find();
   const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
 
   res.status(200).send(randomQuote);
@@ -123,7 +140,9 @@ const deleteQuote = (req, res) => {
 
 module.exports = {
   getQuotes,
+  getQuotesFromDb,
   getRandomQuote,
+  getRandomQuoteFromDb,
   createQuote,
   createQuoteInDb,
   updateQuote,

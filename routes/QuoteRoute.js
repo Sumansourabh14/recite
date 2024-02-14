@@ -6,6 +6,8 @@ const {
   deleteQuote,
   updateQuote,
   createQuoteInDb,
+  getQuotesFromDb,
+  getRandomQuoteFromDb,
 } = require("../controllers/quoteController");
 const router = express.Router();
 
@@ -16,7 +18,9 @@ router.get("/", (req, res) => {
 console.log(__dirname);
 
 router.get("/quotes", getQuotes);
+router.get("/quotes-from-db", getQuotesFromDb);
 router.get("/random/quote", getRandomQuote);
+router.get("/random/quote-from-db", getRandomQuoteFromDb);
 
 router.post("/quote", createQuote);
 router.post("/quote-in-db", createQuoteInDb);
