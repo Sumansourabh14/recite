@@ -65,5 +65,16 @@
       "createdAt": "2023-09-16T11:00:41.375Z",
       "updatedAt": "2023-09-16T11:27:16.787Z"
     }
+  },
+  {
+    "id": "1707930385404",
+    "data": {
+      "quote": "Sometimes the eye of a hurricane is the safest place to be.",
+      "book": "All the Light We Cannot See",
+      "author": "Anthony Doerr",
+      "length": 59,
+      "words": 12,
+      "createdAt": "2024-02-14T17:06:25.404Z"
+    }
   }
 ]
