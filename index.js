@@ -2,9 +2,12 @@ const express = require("express");
 const dotenv = require("dotenv");
 const quoteRoute = require("./routes/QuoteRoute");
 const cors = require("cors");
+const connectDb = require("./utils/connectDb");
 
 const app = express();
 dotenv.config();
+
+connectDb();
 
 app.use(express.json());
 

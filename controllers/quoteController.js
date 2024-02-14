@@ -1,6 +1,7 @@
 // const quotes = require("../content/quotes.json");
 const path = require("path");
 const fs = require("fs");
+const QuoteModel = require("../models/QuoteModel");
 
 // const quotesFilePath = path.resolve("./") + "\\content\\quotes.json";
 const quotesFilePath = path.resolve("./") + "/content/quotes.json";
@@ -59,6 +60,33 @@ const createQuote = (req, res) => {
   }
 };
 
+const createQuoteInDb = async (req, res) => {
+  try {
+    const { quote, book, author } = req.body;
+
+    if (!quote || !book || !author) {
+      res.status(401).send("Error: All fields are required.");
+    }
+
+    const newQuote = await QuoteModel.create({
+      quote,
+      book,
+      author,
+      length: quote.length,
+      words: quote.split(" ").length,
+    });
+
+    res.status(201).json({
+      success: true,
+      message: "Quote has been added!",
+      data: newQuote,
+    });
+  } catch (error) {
+    console.log("Could not create a quote :(", error);
+    res.status(400).send({ success: false });
+  }
+};
+
 const updateQuote = (req, res) => {
   const { id } = req.params;
 
@@ -97,6 +125,7 @@ module.exports = {
   getQuotes,
   getRandomQuote,
   createQuote,
+  createQuoteInDb,
   updateQuote,
   deleteQuote,
 };
