@@ -1,3 +1,5 @@
+![Recite cover with a black gradient background and two quote icons](./images/recite-v1.png)
+
 # Recite
 
 Recite is a FREE and open source API that contains amazing quotes from books (fiction/non-fiction).
