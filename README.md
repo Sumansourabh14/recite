@@ -32,24 +32,21 @@ Returns a single random quote.
 
 ```JavaScript
 {
-    id: string,
-    // data related to the quote
-    data: {
-        // the actual quote from the book
-        quote: string,
-        // name of the book
-        book: string,
-        // name of the author
-        author: string,
-        // length of the quote
-        length: number,
-        // total words in the quote
-        words: number,
-        // date and time of first published
-        createdAt: string,
-        // date and time of update (if any)
-        updatedAt: string
-    }      
+    _id: string,
+    // the actual quote from the book
+    quote: string,
+    // name of the book
+    book: string,
+    // name of the author
+    author: string,
+    // length of the quote
+    length: number,
+    // total words in the quote
+    words: number,
+    // date and time of first published
+    createdAt: string,
+    // date and time of update (if any)
+    updatedAt: string
 }
 ```
 
@@ -67,13 +64,13 @@ Returns all the quotes.
 
 ```JavaScript
 {
+    success: true
     // total number of quotes
     total: number,
     // The array of quotes
     quotes: [
-        id: string,
-        // data related to the quote
-        data: {
+        {
+            _id: string,
             // the actual quote from the book
             quote: string,
             // name of the book
@@ -88,8 +85,8 @@ Returns all the quotes.
             createdAt: string,
             // date and time of update (if any)
             updatedAt: string
-            }
-        ]  
+        }
+    ]  
 }
 ```
 [Medium article](https://medium.com/@sumsourabh14/introducing-recite-a-free-api-for-book-quotes-138dca77f7da)
