@@ -22,7 +22,7 @@ https://recite.onrender.com
 ## Get random quote
 
 ```
-GET /random/quote
+GET /random/quote-from-db
 ```
 
 Returns a single random quote. 
@@ -54,7 +54,7 @@ Returns a single random quote.
 ## Get all quotes
 
 ```
-GET /quotes
+GET /quotes-from-db
 ```
 
 Returns all the quotes. 
