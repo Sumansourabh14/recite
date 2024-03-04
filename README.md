@@ -92,3 +92,4 @@ Returns all the quotes.
         ]  
 }
 ```
+[Medium article](https://medium.com/@sumsourabh14/introducing-recite-a-free-api-for-book-quotes-138dca77f7da)
