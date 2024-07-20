@@ -4,12 +4,15 @@ const quoteSchema = new mongoose.Schema(
   {
     quote: {
       type: String,
+      required: true,
     },
     book: {
       type: String,
+      required: true,
     },
     author: {
       type: String,
+      required: true,
     },
     length: {
       type: Number,
