@@ -35,7 +35,7 @@ GET /api/random/quote-from-db
 ```
 
 Returns a single random quote.
-[Try in your browser](https://recite.onrender.com/api/random/quote)
+[Try in your browser](https://recite.onrender.com/api/random/quote-from-db)
 
 ### Response
 
@@ -66,7 +66,7 @@ GET /api/quotes-from-db
 ```
 
 Returns all the quotes.
-[Try in your browser](https://recite.onrender.com/api/quotes)
+[Try in your browser](https://recite.onrender.com/api/quotes-from-db)
 
 ### Response
 
