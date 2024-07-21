@@ -26,6 +26,45 @@ const getQuotesFromDb = async (req, res) => {
   });
 };
 
+// @desc    Search all the quotes
+// @route   GET /api/quotes/search?query=
+// @access  Public
+const searchQuotes = async (req, res) => {
+  try {
+    const { query } = req.query;
+
+    if (!query) {
+      return res
+        .status(400)
+        .send({ success: false, message: "Please provide a search query." });
+    }
+
+    const quotes = await QuoteModel.find({
+      $or: [
+        { quote: { $regex: query, $options: "i" } },
+        { author: { $regex: query, $options: "i" } },
+        { book: { $regex: query, $options: "i" } },
+      ],
+    });
+
+    if (quotes.length > 0) {
+      res.status(200).json({
+        success: true,
+        query: query,
+        total: quotes.length,
+        data: quotes,
+      });
+    } else {
+      res.status(200).json({
+        success: true,
+        message: "No result found",
+      });
+    }
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 const getRandomQuote = (req, res) => {
   const quotesFileContent = fs.readFileSync(quotesFilePath);
   const quotes = JSON.parse(quotesFileContent);
@@ -147,4 +186,5 @@ module.exports = {
   createQuoteInDb,
   updateQuote,
   deleteQuote,
+  searchQuotes,
 };

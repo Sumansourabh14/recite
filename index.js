@@ -12,7 +12,7 @@ connectDb();
 app.use(express.json());
 
 app.use(cors({ origin: "*" }));
-app.use("/", quoteRoute);
+app.use("/api", quoteRoute);
 
 const port = process.env.PORT;
 
