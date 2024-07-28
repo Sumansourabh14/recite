@@ -11,7 +11,7 @@ I wanted to use quotes from books in my Next.js project just like how Goodreads 
 ## API Root URL
 
 ```
-https://recite.onrender.com
+https://recite.onrender.com/api/v1
 ```
 
 ## API Reference
@@ -31,11 +31,11 @@ https://recite.onrender.com
 ## Get random quote
 
 ```
-GET /api/random/quote-from-db
+GET /random
 ```
 
 Returns a single random quote.
-[Try in your browser](https://recite.onrender.com/api/random/quote-from-db)
+[Try in your browser](https://recite.onrender.com/api/v1/random)
 
 ### Response
 
@@ -62,11 +62,11 @@ Returns a single random quote.
 ## Get all quotes
 
 ```
-GET /api/quotes-from-db
+GET /quotes
 ```
 
 Returns all the quotes.
-[Try in your browser](https://recite.onrender.com/api/quotes-from-db)
+[Try in your browser](https://recite.onrender.com/api/v1/quotes)
 
 ### Response
 
@@ -101,11 +101,11 @@ Returns all the quotes.
 ## Search quotes
 
 ```
-GET /api/quotes/search?query=
+GET /quotes/search?query=
 ```
 
 Returns all the relevant quotes that match the search query.
-[Try in your browser](https://recite.onrender.com/api/quotes/search?query=life)
+[Try in your browser](https://recite.onrender.com/api/v1/quotes/search?query=life)
 
 ### Response
 
