@@ -5,6 +5,7 @@ const cors = require("cors");
 const connectDb = require("./utils/connectDb");
 const errorHandler = require("./middlewares/errorHandler");
 const notFound = require("./middlewares/notFound");
+const apiRequestLimiter = require("./middlewares/rateLimit");
 
 const app = express();
 dotenv.config();
@@ -14,6 +15,8 @@ connectDb();
 app.use(express.json());
 
 app.use(cors({ origin: "*" }));
+
+app.use(apiRequestLimiter);
 app.use("/api/v1", quoteRoute);
 
 app.use(notFound);
