@@ -18,12 +18,29 @@ https://recite.onrender.com/api/v1
 
 There is a rate limit of 250 requests per minute. If you exceed the rate limit, the API will respond with a <code>429</code> error.
 
+## API Response Example
+
+```JavaScript
+{
+  "_id": "65cd071ec2f3eed99da6a22c",
+  "quote": "She burned too bright for this world.",
+  "book": "Wuthering Heights",
+  "author": "Emily Bronte",
+  "length": 37,
+  "words": 7,
+  "createdAt": "2024-02-14T18:31:58.112Z",
+  "updatedAt": "2024-02-14T18:31:58.112Z",
+  "__v": 0
+}
+```
+
 ## API Reference
 
 - [Recite](#recite)
   - [Why I created this API?](#why-i-created-this-api)
   - [API Root URL](#api-root-url)
   - [Rate Limit](#rate-limit)
+  - [API Response Example](#api-response-example)
   - [API Reference](#api-reference)
   - [Get random quote](#get-random-quote)
     - [Response](#response)
