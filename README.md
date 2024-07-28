@@ -14,11 +14,16 @@ I wanted to use quotes from books in my Next.js project just like how Goodreads 
 https://recite.onrender.com/api/v1
 ```
 
+## Rate Limit
+
+There is a rate limit of 250 requests per minute. If you exceed the rate limit, the API will respond with a <code>429</code> error.
+
 ## API Reference
 
 - [Recite](#recite)
   - [Why I created this API?](#why-i-created-this-api)
   - [API Root URL](#api-root-url)
+  - [Rate Limit](#rate-limit)
   - [API Reference](#api-reference)
   - [Get random quote](#get-random-quote)
     - [Response](#response)
