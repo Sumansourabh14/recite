@@ -3,8 +3,14 @@ const QuoteModel = require("../models/QuoteModel");
 // @desc    Get all the quotes
 // @route   GET /api/v1/quotes
 // @access  Public
-const getQuotesFromDb = async (req, res) => {
+const getQuotesFromDb = async (req, res, next) => {
   const quotes = await QuoteModel.find();
+
+  if (!quotes) {
+    const error = new Error("Quotes were not found");
+    error.status = 404;
+    return next(error);
+  }
 
   res.status(200).send({
     success: true,
@@ -16,7 +22,7 @@ const getQuotesFromDb = async (req, res) => {
 // @desc    Search all the quotes
 // @route   GET /api/quotes/search?query=
 // @access  Public
-const searchQuotes = async (req, res) => {
+const searchQuotes = async (req, res, next) => {
   try {
     const { query } = req.query;
 
@@ -55,7 +61,7 @@ const searchQuotes = async (req, res) => {
 // @desc    Get random quote
 // @route   GET /api/v1/random
 // @access  Public
-const getRandomQuoteFromDb = async (req, res) => {
+const getRandomQuoteFromDb = async (req, res, next) => {
   const quotes = await QuoteModel.find();
   const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
 
@@ -65,12 +71,14 @@ const getRandomQuoteFromDb = async (req, res) => {
 // @desc    Get all the quotes
 // @route   POST /api/v1/quote
 // @access  Public
-const createQuoteInDb = async (req, res) => {
+const createQuoteInDb = async (req, res, next) => {
   try {
     const { quote, book, author } = req.body;
 
     if (!quote || !book || !author) {
-      res.status(401).send("Error: All fields are required.");
+      const error = new Error("All fields are required");
+      error.status = 400;
+      return next(error);
     }
 
     const newQuote = await QuoteModel.create({
@@ -86,9 +94,10 @@ const createQuoteInDb = async (req, res) => {
       message: "Quote has been added!",
       data: newQuote,
     });
-  } catch (error) {
-    console.log("Could not create a quote :(", error);
-    res.status(400).send({ success: false });
+  } catch (err) {
+    const error = new Error("Could not create a quote");
+    error.status = 400;
+    return next(error);
   }
 };
 
