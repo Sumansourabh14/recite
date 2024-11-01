@@ -6,11 +6,14 @@ const connectDb = require("./utils/connectDb");
 const errorHandler = require("./middlewares/errorHandler");
 const notFound = require("./middlewares/notFound");
 const apiRequestLimiter = require("./middlewares/rateLimit");
+const { reloadService, interval } = require("./utils/reloaderFunction");
 
 const app = express();
 dotenv.config();
 
 connectDb();
+
+setInterval(reloadService, interval);
 
 app.use(express.json());
 
