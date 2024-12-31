@@ -13,7 +13,7 @@ dotenv.config();
 
 connectDb();
 
-setInterval(reloadService, interval);
+// setInterval(reloadService, interval);
 
 app.use(express.json());
 
