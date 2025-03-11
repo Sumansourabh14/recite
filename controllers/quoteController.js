@@ -81,6 +81,14 @@ const createQuoteInDb = async (req, res, next) => {
       return next(error);
     }
 
+    const isExist = await QuoteModel.findOne({ quote });
+
+    if (!!isExist) {
+      const error = new Error("Quote already exists!");
+      error.status = 401;
+      return next(error);
+    }
+
     const newQuote = await QuoteModel.create({
       quote,
       book,
